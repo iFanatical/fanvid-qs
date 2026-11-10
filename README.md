@@ -22,6 +22,11 @@ when there).
     make
     sudo make install        # /usr/local/bin/fanvid
 
+[fanhypr-qs](https://github.com/iFanatical/fanhypr-qs)'s `install.sh` asks
+whether to install video wallpapers, and if so clones, builds and installs
+this, with its dependencies: `tools/need.sh` lists them, in the format of
+fanshell-qs's `tools/lib.sh`.
+
 ## Protocol
 
 fanshell-qs runs fanvid and talks to it as below, and takes it only when
