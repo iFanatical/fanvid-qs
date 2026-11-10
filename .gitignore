@@ -1,3 +1,4 @@
 gen/
 *.o
 proto/fanvid-proto
+/fanvid
