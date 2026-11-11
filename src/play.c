@@ -1012,6 +1012,11 @@ static void show(struct output *o, int idx, struct pic *p)
     wl_callback_add_listener(o->frame_cb, &frame_listener, o);
     o->waiting = true;
     wl_surface_commit(o->video);
+    /* Damage the layer surface too. Hyprland does not repaint a rotated
+     * output for the subsurface's damage alone, and refreshes its cached
+     * blur of the background layer only for the layer surface's own. */
+    wl_surface_damage_buffer(o->bg, 0, 0, 1, 1);
+    wl_surface_commit(o->bg);
     struct pic *old = o->shown;
     o->shown = p;
     p->shown_on++;
